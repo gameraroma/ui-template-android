@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginPageListActivity" />
-        <activity android:name=".exampleviews.LoginLightActivity"></activity>
+        <activity
+            android:name=".exampleviews.LoginLightActivity" />
     </application>
 
 </manifest>
