@@ -1,5 +1,6 @@
 package gameraromic.uitemplate
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -18,7 +19,8 @@ class HomeActivity : AppCompatActivity() {
         listButton = listPageButton
 
         loginButton.setOnClickListener {
-
+            val intent = Intent(this, LoginPageListActivity::class.java)
+            startActivity(intent)
         }
 
         listButton.setOnClickListener {
