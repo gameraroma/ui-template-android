@@ -2,6 +2,7 @@ package gameraromic.uitemplate.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.support.v4.content.ContextCompat
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
@@ -19,7 +20,7 @@ class MenuListAdapter(private val context: Context, private val itemViewResource
 
     override fun getCount(): Int = menuItemArray.count()
 
-    @SuppressLint("ViewHolder")
+    @SuppressLint("ViewHolder", "PrivateResource")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val row: View = inflater.inflate(itemViewResource, parent, false)
@@ -30,7 +31,9 @@ class MenuListAdapter(private val context: Context, private val itemViewResource
         val icon = row.findViewById(R.id.example_type_icon) as ImageView
 
         title.text = menuItem.name
+        title.setTextColor(ContextCompat.getColor(context, R.color.material_blue_grey_800))
         icon.setImageResource(menuItem.iconResourceId)
+        icon.setColorFilter(ContextCompat.getColor(context, R.color.material_blue_grey_800), android.graphics.PorterDuff.Mode.SRC_IN)
 
         return row
     }
