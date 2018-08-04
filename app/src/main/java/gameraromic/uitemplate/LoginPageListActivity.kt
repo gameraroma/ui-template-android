@@ -10,25 +10,25 @@ import kotlinx.android.synthetic.main.activity_login_page_list.*
 
 class LoginPageListActivity : AppCompatActivity() {
 
-    private val LightTheme: String = "Light"
-    private val DarkTheme: String = "Dark"
+    private val _lightTheme: String = "Light"
+    private val _darkTheme: String = "Dark"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page_list)
 
-        val loginList = arrayOf(LightTheme, DarkTheme)
+        val loginList = arrayOf(_lightTheme, _darkTheme)
 
         loginPageListView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1 , loginList)
 
         loginPageListView.setOnItemClickListener { adapterView, view, i, l ->
             val itemTextView = view.findViewById<TextView>(android.R.id.text1)
             when (itemTextView.text) {
-                LightTheme -> {
+                _lightTheme -> {
                     val intent = Intent(this, LoginLightActivity::class.java)
                     startActivity(intent)
                 }
-                DarkTheme -> {
+                _darkTheme -> {
 
                 }
                 else -> {}
