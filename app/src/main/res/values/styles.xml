@@ -8,4 +8,12 @@
         <item name="colorAccent">@android:color/holo_orange_dark</item>
     </style>
 
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="AppFont">
+        <item name="android:fontFamily">@font/gotham</item>
+    </style>
+
 </resources>
