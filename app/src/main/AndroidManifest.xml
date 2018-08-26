@@ -10,7 +10,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,10 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".exampleviews.LoginLightActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".exampleviews.ListLightActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import gameraromic.uitemplate.adapters.MenuListAdapter
+import gameraromic.uitemplate.exampleviews.ListLightActivity
 import gameraromic.uitemplate.exampleviews.LoginLightActivity
 import gameraromic.uitemplate.models.MenuItem
 import kotlinx.android.synthetic.main.activity_home.*
@@ -28,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
                     openActivity(LoginLightActivity::class.java)
                 }
                 _listSection -> {
-
+                    openActivity(ListLightActivity::class.java)
                 }
                 else -> {}
             }
