@@ -32,7 +32,7 @@ class ListLightActivity : AppCompatActivity() {
         )
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = ListLightAdapter(membersList)
+        viewAdapter = ListLightAdapter(membersList, this)
 
         lightRecyclerView.apply {
             setHasFixedSize(true)

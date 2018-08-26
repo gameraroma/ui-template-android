@@ -1,15 +1,17 @@
 package gameraromic.uitemplate.adapters
 
+import android.content.Context
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import gameraromic.uitemplate.R
 import gameraromic.uitemplate.models.List.GirlGroupMember
 import kotlinx.android.synthetic.main.listitem_lightlist.view.*
 
-class ListLightAdapter(private val membersList: Array<GirlGroupMember>) : RecyclerView.Adapter<ListLightAdapter.ListLightViewHolder>() {
+class ListLightAdapter(private val membersList: Array<GirlGroupMember>, private val context: Context) : RecyclerView.Adapter<ListLightAdapter.ListLightViewHolder>() {
     override fun getItemCount(): Int {
         return membersList.size
     }
@@ -23,7 +25,7 @@ class ListLightAdapter(private val membersList: Array<GirlGroupMember>) : Recycl
         holder.nameTextView?.text = membersList[position].name
         holder.groupTextView?.text = membersList[position].groupName
         holder.positionTextView?.text = membersList[position].position
-        holder.profileImageView?.setImageResource(membersList[position].profilePicResInt)
+        Glide.with(context).load(membersList[position].profilePicResInt).into(holder.profileImageView)
     }
 
     class ListLightViewHolder (containerView: View) : RecyclerView.ViewHolder(containerView) {

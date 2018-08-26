@@ -13,14 +13,14 @@
 
         <ImageView
             android:id="@+id/profile_image_view"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:contentDescription="TODO"
             card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintDimensionRatio="1:1"
+            card_view:layout_constraintDimensionRatio="4:3"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:srcCompat="@color/colorPrimary" />
