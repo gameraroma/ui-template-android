@@ -1,6 +1,5 @@
 package gameraromic.uitemplate.exampleviews
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
@@ -10,24 +9,40 @@ import kotlinx.android.synthetic.main.activity_login_light.*
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 
 class LoginLightActivity : AppCompatActivity() {
     private val emailString: String = "a@a.co"
     private val passwordString: String = "1234"
 
+    private lateinit var loginButton: Button
+    private lateinit var emailEditTextLayout: TextInputLayout
+    private lateinit var passwordEditTextLayout: TextInputLayout
+    private lateinit var emailEditText: TextInputEditText
+    private lateinit var passwordEditText: TextInputEditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_light)
 
-        login_button.setOnClickListener { _ ->
+        loginButton = login_button as Button
+        emailEditTextLayout = email_edit_text_layout as TextInputLayout
+        passwordEditTextLayout = password_edit_text_layout as TextInputLayout
+        emailEditText = email_edit_text as TextInputEditText
+        passwordEditText = password_edit_text as TextInputEditText
+
+        loginButton.setOnClickListener { _ ->
             loginAction()
         }
 
-        email_edit_text_layout.hint = email_edit_text_layout.hint.toString() + ": " + emailString
-        password_edit_text_layout.hint = password_edit_text_layout.hint.toString() + ": " + passwordString
+        emailEditTextLayout.hint = emailEditTextLayout.hint.toString() + ": " + emailString
+        passwordEditTextLayout.hint = passwordEditTextLayout.hint.toString() + ": " + passwordString
 
-        password_edit_text.setOnEditorActionListener OnEditorActionListener@{ textView, i, keyEvent ->
+        passwordEditText.setOnEditorActionListener OnEditorActionListener@{ textView, i, keyEvent ->
             if (i == EditorInfo.IME_ACTION_DONE || keyEvent?.keyCode == KeyEvent.KEYCODE_ENTER)
             {
                 loginAction()
@@ -40,24 +55,24 @@ class LoginLightActivity : AppCompatActivity() {
             registerAction()
         }
 
-        email_edit_text.addTextChangedListener(object : TextWatcher {
+        emailEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                email_edit_text_layout.error = null
+                emailEditTextLayout.error = null
             }
 
             override fun afterTextChanged(s: Editable) {
             }
         })
 
-        password_edit_text.addTextChangedListener(object : TextWatcher {
+        passwordEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                password_edit_text_layout.error = null
+                passwordEditTextLayout.error = null
             }
 
             override fun afterTextChanged(s: Editable) {
@@ -66,27 +81,27 @@ class LoginLightActivity : AppCompatActivity() {
     }
 
     private fun loginAction() {
-        email_edit_text_layout.error = null
-        password_edit_text_layout.error = null
+        emailEditTextLayout.error = null
+        passwordEditTextLayout.error = null
 
-        val emailText = email_edit_text.text.toString()
-        val passwordText = password_edit_text.text.toString()
+        val emailText = emailEditText.text.toString()
+        val passwordText = passwordEditText.text.toString()
 
         val isValidEmail = emailText == emailString
         val isValidPassword = passwordText == passwordString
 
         if (emailText.isEmpty()) {
-            email_edit_text_layout.error = "Email cannot be empty"
+            emailEditTextLayout.error = "Email cannot be empty"
         } else if (!isEmailFormatValid(emailText)) {
-            email_edit_text_layout.error = "Wrong format"
+            emailEditTextLayout.error = "Wrong format"
         } else if (!isValidEmail) {
-            email_edit_text_layout.error = "Incorrect Email"
+            emailEditTextLayout.error = "Incorrect Email"
         }
 
         if (passwordText.isEmpty()) {
-            password_edit_text_layout.error = "Password cannot be empty"
+            passwordEditTextLayout.error = "Password cannot be empty"
         } else if (!isValidPassword) {
-            password_edit_text_layout.error = "Incorrect Password"
+            passwordEditTextLayout.error = "Incorrect Password"
         }
 
         if (isValidEmail && isValidPassword) {

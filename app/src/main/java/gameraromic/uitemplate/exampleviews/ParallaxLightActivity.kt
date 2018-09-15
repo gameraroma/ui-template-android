@@ -1,7 +1,7 @@
 package gameraromic.uitemplate.exampleviews
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import gameraromic.uitemplate.R
 import gameraromic.uitemplate.adapters.SimpleMemberListAdapter
 import gameraromic.uitemplate.getMemberNameDuplicatedList
