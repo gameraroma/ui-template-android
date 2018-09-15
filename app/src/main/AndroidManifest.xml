@@ -19,13 +19,15 @@
         </activity>
         <activity
             android:name=".LoginPageListActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme" /><!---->
         <activity
             android:name=".exampleviews.LoginLightActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".exampleviews.ListLightActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme"
+            android:label="@string/list_page_title"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

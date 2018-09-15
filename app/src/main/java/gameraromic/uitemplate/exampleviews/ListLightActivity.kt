@@ -14,16 +14,12 @@ class ListLightActivity : AppCompatActivity() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    private lateinit var membersList: Array<GirlGroupMember>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_light)
 
-        membersList = getMembersList
-
         viewManager = LinearLayoutManager(this)
-        viewAdapter = ListLightAdapter(membersList, this)
+        viewAdapter = ListLightAdapter(getMembersList, this)
 
         lightRecyclerView.apply {
             setHasFixedSize(true)

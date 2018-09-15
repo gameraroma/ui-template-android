@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import gameraromic.uitemplate.R
 import gameraromic.uitemplate.models.List.GirlGroupMember
@@ -22,16 +23,24 @@ class ListLightAdapter(private val membersList: Array<GirlGroupMember>, private 
     }
 
     override fun onBindViewHolder(holder: ListLightViewHolder, position: Int) {
-        holder.nameTextView?.text = membersList[position].name
-        holder.groupTextView?.text = membersList[position].groupName
-        holder.positionTextView?.text = membersList[position].position
+        holder.nameTextView.text = membersList[position].name
+        holder.groupTextView.text = membersList[position].groupName
+        holder.positionTextView.text = membersList[position].position
         Glide.with(context).load(membersList[position].profilePicResInt).into(holder.profileImageView)
+        holder.viewButton.setOnClickListener {
+            Toast.makeText(context, "View: " + membersList[position].name, Toast.LENGTH_SHORT).show()
+        }
+        holder.shareButton.setOnClickListener {
+            Toast.makeText(context, "Share: " + membersList[position].name, Toast.LENGTH_SHORT).show()
+        }
     }
 
     class ListLightViewHolder (containerView: View) : RecyclerView.ViewHolder(containerView) {
-        val nameTextView = containerView.name_text_view
-        val groupTextView = containerView.group_text_view
-        val positionTextView = containerView.position_text_view
-        val profileImageView = containerView.profile_image_view
+        val nameTextView = containerView.name_text_view!!
+        val groupTextView = containerView.group_text_view!!
+        val positionTextView = containerView.position_text_view!!
+        val profileImageView = containerView.profile_image_view!!
+        val viewButton = containerView.view_button!!
+        val shareButton = containerView.share_button!!
     }
 }
