@@ -2,4 +2,5 @@
     <string name="app_name">UITemplate</string>
     <string name="default_text_name">Name</string>
     <string name="list_page_title">List</string>
+    <string name="parallax_page_title">Parallax</string>
 </resources>
