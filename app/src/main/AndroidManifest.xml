@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".exampleviews.CollapsingToolbarLightActivity"
+            android:name=".exampleviews.ParallaxLightActivity"
             android:label="@string/parallax_page_title"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
@@ -34,9 +34,6 @@
             android:label="@string/list_page_title"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".exampleviews.ParallaxLightActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -2,7 +2,6 @@ package gameraromic.uitemplate.exampleviews
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gameraromic.uitemplate.R
@@ -17,6 +16,7 @@ class ParallaxLightActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parallax_light)
+        setSupportActionBar(toolbar)
 
         memberListRecyclerView.adapter = SimpleMemberListAdapter(this, getMemberNameDuplicatedList)
 
@@ -28,9 +28,5 @@ class ParallaxLightActivity : AppCompatActivity() {
             layoutManager = viewManager
             adapter = viewAdapter
         }
-
-        collapsing_toolbar.title = resources.getString(R.string.parallax_page_title)
-        collapsing_toolbar.setExpandedTitleColor(ContextCompat.getColor(this, android.R.color.white))
-
     }
 }
