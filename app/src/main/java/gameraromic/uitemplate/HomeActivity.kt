@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import gameraromic.uitemplate.adapters.MenuListAdapter
+import gameraromic.uitemplate.exampleviews.CollapsingToolbarLightActivity
 import gameraromic.uitemplate.exampleviews.ListLightActivity
 import gameraromic.uitemplate.exampleviews.LoginLightActivity
 import gameraromic.uitemplate.exampleviews.ParallaxLightActivity
@@ -38,7 +39,7 @@ class HomeActivity : AppCompatActivity() {
                     openActivity(ListLightActivity::class.java)
                 }
                 _parallaxSection -> {
-                    openActivity(ParallaxLightActivity::class.java)
+                    openActivity(CollapsingToolbarLightActivity::class.java)
                 }
                 else -> {}
             }

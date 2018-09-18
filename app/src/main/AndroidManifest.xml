@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".exampleviews.CollapsingToolbarLightActivity"
+            android:label="@string/parallax_page_title"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".HomeActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
