@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gameraromic.uitemplate.R
 import gameraromic.uitemplate.adapters.MemberWithIconListAdapter
-import gameraromic.uitemplate.getMembersList
+import gameraromic.uitemplate.getMembersDuplicatedList
 import gameraromic.uitemplate.viewmodels.MasterDetailVerticalViewModel
 import kotlinx.android.synthetic.main.activity_master_detail_vertical_light.*
 
@@ -29,7 +29,7 @@ class MasterDetailVerticalLightActivity : AppCompatActivity() {
         })
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = MemberWithIconListAdapter(this, getMembersList) { member ->
+        viewAdapter = MemberWithIconListAdapter(this, getMembersDuplicatedList) { member ->
             viewModel.setCurrentMember(member)
         }
 

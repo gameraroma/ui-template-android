@@ -15,7 +15,7 @@ val getMembersList: Array<GirlGroupMember> =
                 GirlGroupMember("Yeri",R.drawable.rvv_yeri, "Red Velvet", "Rapper, Support Vocal")
         )
 
-val getMemberDuplicatedList: Array<GirlGroupMember> =
+val getMembersDuplicatedList: Array<GirlGroupMember> =
         arrayOf(
                 GirlGroupMember("Irene", R.drawable.rvv_irene, "Red Velvet", "Leader, Lead Dancer, Rapper, Visual"),
                 GirlGroupMember("Seulgi", R.drawable.rvv_seulgi, "Red Velvet", "Main Dancer, Vocal"),

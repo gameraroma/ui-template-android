@@ -63,7 +63,7 @@
             android:name=".exampleviews.MasterDetailVerticalLightActivity"
             android:label="@string/vertical_master_detail_title"
             android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
