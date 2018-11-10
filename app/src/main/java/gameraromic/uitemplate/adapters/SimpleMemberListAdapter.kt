@@ -29,6 +29,6 @@ class SimpleMemberListAdapter(private val context: Context, private val stringAr
     }
 
     class SimpleMemberListViewHolder(containerView: View) : RecyclerView.ViewHolder(containerView) {
-        val nameTextView = containerView.name_text_view!!
+        val nameTextView = containerView.name_icon_text_view!!
     }
 }

@@ -36,7 +36,7 @@ class ListLightAdapter(private val membersList: Array<GirlGroupMember>, private 
     }
 
     class ListLightViewHolder (containerView: View) : RecyclerView.ViewHolder(containerView) {
-        val nameTextView = containerView.name_text_view!!
+        val nameTextView = containerView.name_icon_text_view!!
         val groupTextView = containerView.group_text_view!!
         val positionTextView = containerView.position_text_view!!
         val profileImageView = containerView.profile_image_view!!

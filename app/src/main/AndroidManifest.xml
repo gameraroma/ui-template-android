@@ -61,7 +61,7 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".exampleviews.MasterDetailVerticalLightActivity"
-            android:label="@string/list_page_title"
+            android:label="@string/vertical_master_detail_title"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppTheme" />
     </application>
