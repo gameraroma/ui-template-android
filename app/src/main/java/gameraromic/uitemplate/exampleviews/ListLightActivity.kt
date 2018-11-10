@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import gameraromic.uitemplate.R
 import gameraromic.uitemplate.adapters.ListLightAdapter
 import gameraromic.uitemplate.getMembersList
-import gameraromic.uitemplate.models.List.GirlGroupMember
 import kotlinx.android.synthetic.main.activity_list_light.*
 
 class ListLightActivity : AppCompatActivity() {

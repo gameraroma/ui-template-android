@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import gameraromic.uitemplate.adapters.MenuListAdapter
-import gameraromic.uitemplate.exampleviews.ParallaxLightActivity
-import gameraromic.uitemplate.exampleviews.ListLightActivity
-import gameraromic.uitemplate.exampleviews.LoginLightActivity
-import gameraromic.uitemplate.exampleviews.MapsLightActivity
+import gameraromic.uitemplate.exampleviews.*
 import gameraromic.uitemplate.models.MenuItem
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -18,11 +15,13 @@ class HomeActivity : AppCompatActivity() {
     private val _listSection: String = "List"
     private val _parallaxSection: String = "Parallax"
     private val _mapSection: String = "Map"
+    private val _verticalMasterDetail: String = "Vertical Master Detail"
     private val _menuItemList = arrayOf(
             MenuItem(_loginSection, R.drawable.ic_lock_open_outline),
             MenuItem(_listSection, R.drawable.ic_format_list_bulleted),
             MenuItem(_parallaxSection, R.drawable.icon_parallax),
-            MenuItem(_mapSection, R.drawable.ic_map)
+            MenuItem(_mapSection, R.drawable.ic_map),
+            MenuItem(_verticalMasterDetail, R.drawable.ic_contacts)
             )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +44,9 @@ class HomeActivity : AppCompatActivity() {
                 }
                 _mapSection -> {
                     openActivity(MapsLightActivity::class.java)
+                }
+                _verticalMasterDetail -> {
+                    openActivity(MasterDetailVerticalLightActivity::class.java)
                 }
                 else -> {}
             }
