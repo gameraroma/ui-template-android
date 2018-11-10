@@ -8,29 +8,36 @@ import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import gameraromic.uitemplate.R
+import gameraromic.uitemplate.models.List.GirlGroupMember
 import kotlinx.android.synthetic.main.listitem_list_with_icon.view.*
 
 
-class MemberWithIconListAdapter(private val context: Context, private val stringArray: Array<String>) : RecyclerView.Adapter<MemberWithIconListAdapter.SimpleMemberListViewHolder>() {
+class MemberWithIconListAdapter(private val context: Context, private val groupArray: Array<GirlGroupMember>, private val clickListener: (GirlGroupMember) -> Unit) : RecyclerView.Adapter<MemberWithIconListAdapter.MemberWithIconListViewHolder>() {
     @SuppressLint("PrivateResource")
-    override fun onBindViewHolder(holder: MemberWithIconListAdapter.SimpleMemberListViewHolder, position: Int) {
-        holder.nameTextView.text = stringArray[position]
+    override fun onBindViewHolder(holder: MemberWithIconListAdapter.MemberWithIconListViewHolder, position: Int) {
         holder.nameTextView.setTextColor(ContextCompat.getColor(context, R.color.material_blue_grey_800))
-
-        holder.abbNameTextView.text = stringArray[position][0].toString()
+        holder.bind(groupArray[position], clickListener)
     }
 
     override fun getItemCount(): Int {
-        return stringArray.count()
+        return groupArray.count()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberWithIconListAdapter.SimpleMemberListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemberWithIconListAdapter.MemberWithIconListViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.listitem_list_with_icon, parent, false)
-        return SimpleMemberListViewHolder(layout)
+        return MemberWithIconListViewHolder(layout)
     }
 
-    class SimpleMemberListViewHolder(containerView: View) : RecyclerView.ViewHolder(containerView) {
+    class MemberWithIconListViewHolder(private val containerView: View) : RecyclerView.ViewHolder(containerView) {
         val nameTextView = containerView.name_icon_text_view!!
         val abbNameTextView = containerView.abb_name_text_view!!
+
+        fun bind(member: GirlGroupMember, clickListener: (GirlGroupMember) -> Unit) {
+            nameTextView.text = member.name
+            abbNameTextView.text = member.name[0].toString()
+            containerView.setOnClickListener{
+                clickListener(member)
+            }
+        }
     }
 }
